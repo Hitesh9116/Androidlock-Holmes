@@ -56,14 +56,17 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder>{
 
         //Adding click listener on CardView to open clicked application directly from here .
         viewHolder.cardView.setOnClickListener(view -> {
-            Intent intent = context1.getPackageManager().getLaunchIntentForPackage(ApplicationPackageName);
 
-            if(intent != null){
-                context1.startActivity(intent);
-            }
-            else {
-                Toast.makeText(context1,ApplicationPackageName + " Error, Please Try Again.", Toast.LENGTH_LONG).show();
-            }
+            Intent intent = new Intent(context1, Result.class);
+            intent.putExtra("message", ApplicationPackageName);
+            context1.startActivity(intent);
+//            Intent intent = context1.getPackageManager().getLaunchIntentForPackage(ApplicationPackageName);
+//            if(intent != null){
+//                context1.startActivity(intent);
+//            }
+//            else {
+//                Toast.makeText(context1,ApplicationPackageName + " Error, Please Try Again.", Toast.LENGTH_LONG).show();
+//            }
         });
     }
 

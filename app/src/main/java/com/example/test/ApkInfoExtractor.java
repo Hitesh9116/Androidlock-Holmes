@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+
+import android.content.pm.*;
 import android.graphics.drawable.Drawable;
 import androidx.core.content.ContextCompat;
 
@@ -22,6 +20,7 @@ public class ApkInfoExtractor {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
         List<ResolveInfo> resolveInfoList = context1.getPackageManager().queryIntentActivities(intent,0);
+
 
         for(ResolveInfo resolveInfo : resolveInfoList){
             ActivityInfo activityInfo = resolveInfo.activityInfo;

@@ -23,5 +23,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(recyclerViewLayoutManager);
         adapter = new AppsAdapter(MainActivity.this, new ApkInfoExtractor(MainActivity.this).GetAllInstalledApkInfo());
         recyclerView.setAdapter(adapter);
+
+        
     }
 }
